@@ -1,0 +1,20 @@
+[
+    {
+      "_id": "5c1a706e1d0f962e42420cd6",
+      "name": "Books",
+      "image": "https://example.com/books.png",
+      "description": "Fiction and non-fiction books"
+    },
+    {
+      "_id": "5c1a706e1d0f962e42420cd7",
+      "name": "Electronics",
+      "image": "https://example.com/electronics.png",
+      "description": "Computers, smartphones, and more"
+    },
+    {
+      "_id": "5c1a706e1d0f962e42420cd8",
+      "name": "Clothing",
+      "image": "https://example.com/clothing.png",
+      "description": "Shirts, pants, and more"
+    }
+  ]

@@ -1,0 +1,23 @@
+[
+    {
+      "name": "The Great Gatsby",
+      "images": ["https://example.com/gatsby.png"],
+      "description": "A novel by F. Scott Fitzgerald",
+      "price": 12.99,
+      "category_id": "5c1a706e1d0f962e42420cd6"
+    },
+    {
+      "name": "MacBook Pro",
+      "images": ["https://example.com/macbook.png"],
+      "description": "A high-performance laptop from Apple",
+      "price": 1499.99,
+      "category_id": "5c1a706e1d0f962e42420cd7"
+    },
+    {
+      "name": "Black T-Shirt",
+      "images": ["https://example.com/tshirt.png"],
+      "description": "A comfortable t-shirt for everyday wear",
+      "price": 19.99,
+      "category_id": "5c1a706e1d0f962e42420cd8"
+    }
+  ]

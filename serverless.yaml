@@ -1,0 +1,65 @@
+service: my-microservice
+frameworkVersion: "2"
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
+
+custom:
+  stage: dev
+  dotenv:
+    path: .env
+	
+useDotenv: true
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ${env:AWS_REGION}
+  environment:
+    NODE_ENV: ${env:NODE_ENV}
+    MONGO_URI: ${env:MONGO_URI}
+
+functions:
+  app:
+    handler: dist/app.handler
+    events:
+      - http:
+          path: /
+          method: any
+      - http:
+          path: /{proxy+}
+          method: any
+# TODO with more time I would have set a Dev/QA/PROD Db environments on AWS as well
+# resources:
+#   Resources:
+#     ProductsTable:
+#       Type: "AWS::DynamoDB::Table"
+#       Properties:
+#         TableName: "products-${self:provider.stage}"
+#         AttributeDefinitions:
+#           - AttributeName: "productId"
+#             AttributeType: "S"
+#           - AttributeName: "category"
+#             AttributeType: "S"
+#         KeySchema:
+#           - AttributeName: "productId"
+#             KeyType: "HASH"
+#           - AttributeName: "category"
+#             KeyType: "RANGE"
+#         ProvisionedThroughput:
+#           ReadCapacityUnits: 1
+#           WriteCapacityUnits: 1
+
+#     CategoriesTable:
+#       Type: "AWS::DynamoDB::Table"
+#       Properties:
+#         TableName: "categories-${self:provider.stage}"
+#         AttributeDefinitions:
+#           - AttributeName: "categoryId"
+#             AttributeType: "S"
+#         KeySchema:
+#           - AttributeName: "categoryId"
+#             KeyType: "HASH"
+#         ProvisionedThroughput:
+#           ReadCapacityUnits: 1
+#           WriteCapacityUnits: 1
