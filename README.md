@@ -11,20 +11,41 @@ Also The unit test remaing broken due to the lack of time(given more time I woul
 
 # Docker
 Run the following command to start the Docker containers:
-  docker-compose up
+  $ docker-compose up
 
 To test that the docker image runned without issues
-  docker ps -a 
+  $ docker ps -a 
 
 #Mongo Connection String
   mongodb://root:password@localhost:6000/?authMechanism=DEFAULT
 
 # Prerequisites and running commands
- docker-compose build
-  docker-compose up
+  $ docker-compose up
 
-  npm install -g serverless
-  npm install
-  npm run build
-  serverless offline start
+- Node version: Im using node version v14.19.1 please install using either that version directly from node installer via brew or usng Node Version Manager nvm
+
+   $ brew update
+   $ brew install nvm
+   $ mkdir ~/.nvm
+   $ vim ~/.bash_profile
+
+- Install this Node version
+   ```
+   $ nvm install 11.7.0
+   $ nvm use 11.7.0
+
+- Install Serverless framework globally
+  $ npm install -g serverless
+
+- Run Docker image and pre load the data on the mongoDb
+  $ docker-compose up
+
+- Install packages and run the rpoject
+  $ npm install
+  $ npm run build
+  $ serverless offline start
+
+- To run the unit test use 
+  $ npm run test 
+  Please note that the unit test are not finish due to lack of time to compete the test
 
