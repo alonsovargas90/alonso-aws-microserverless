@@ -10,20 +10,22 @@ Due to lack of time I didn't configure the aws conection and deployment to ECS o
 Also The unit test remaing broken due to the lack of time(given more time I would have finish those)
 
 # Docker
-Run the following command to start the Docker containers:
-  $ docker-compose up
+- Run the following command to start the Docker containers:
+   ```
+   $ docker-compose up
 
-To test that the docker image runned without issues
-  $ docker ps -a 
+- To test that the docker image runned without issues
+   ```
+   $ docker ps -a 
 
-#Mongo Connection String
+- Mongo Connection To connect and check the data you can use como GUI like MongoDb Compass and the following conectiuon string
   mongodb://root:password@localhost:6000/?authMechanism=DEFAULT
 
 # Prerequisites and running commands
   $ docker-compose up
 
 - Node version: Im using node version v14.19.1 please install using either that version directly from node installer via brew or usng Node Version Manager nvm
-
+   ```
    $ brew update
    $ brew install nvm
    $ mkdir ~/.nvm
@@ -35,17 +37,21 @@ To test that the docker image runned without issues
    $ nvm use 11.7.0
 
 - Install Serverless framework globally
-  $ npm install -g serverless
+   ```
+   $ npm install -g serverless
 
 - Run Docker image and pre load the data on the mongoDb
-  $ docker-compose up
+   ```  
+   $ docker-compose up
 
-- Install packages and run the rpoject
+- Install packages and run the project
+  ```
   $ npm install
   $ npm run build
   $ serverless offline start
 
-- To run the unit test use 
+- To run the unit test use
+  ```
   $ npm run test 
   Please note that the unit test are not finish due to lack of time to compete the test
 
